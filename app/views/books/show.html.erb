@@ -1,7 +1,3 @@
-<!-- ヘッダー -->
-
-<%= render 'books/list', books: @books %>
-
 <!-- ボディー -->
 <div class="body">
 <div class="container">
@@ -9,12 +5,12 @@
   <div class="row">
  
 <!--  左カラム  -->
-  <div class="col-xs-3">
+<div class="col-xs-3">
 
-    <h2>User info</h2>
-    <%= attachment_image_tag current_user, :image, size: '100x100', class:"attachment user profile_image fallback" %>
-     <table class="table">
-      <tbody>
+  <h2>User info</h2>
+  <%= attachment_image_tag current_user, :image, size: '100x100', class:"attachment user profile_image fallback" %>
+  <table class="table">
+    <tbody>
       <tr></tr> 
       <tr>
         <th>name</th>
@@ -25,30 +21,30 @@
         <th><%= current_user.introduction  %></th>
       </tr>
     </tbody>
-    </table>
-    <div class="row">
-      <%= link_to"", edit_user_path(current_user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
-    </div>
-
-<h2>New book</h2>
-
-<%= form_for(@book) do |f| %>
-
-<div class="field row">
-<label for="book_title">Title</label>
-<%= f.text_field :title, class:"col-xs-12" %>
-</div>
-<div class="field row">
-<label for="book_opinion">Opinion</label>
-<%= f.text_area :body, class:"col-xs-12", :maxlength => "200" %>
-</div>
-
-<div class="actions row">
-<%= f.submit 'Create Book', class: "btn btn-primary col-xs-12" %>
-</div>
-
-<% end %> 
+  </table>
+  <div class="row">
+    <%= link_to"", edit_user_path(current_user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
   </div>
+
+  <h2>New book</h2>
+
+  <%= form_for(@book) do |f| %>
+
+  <div class="field row">
+    <label for="book_title">Title</label>
+    <%= f.text_field :title, class:"col-xs-12" %>
+  </div>
+  <div class="field row">
+    <label for="book_opinion">Opinion</label>
+    <%= f.text_area :body, class:"col-xs-12", :maxlength => "200" %>
+  </div>
+
+  <div class="actions row">
+    <%= f.submit 'Create Book', class: "btn btn-primary col-xs-12" %>
+  </div>
+
+  <% end %> 
+</div>
 
 <!-- 右カラム -->
 	<div class="col-xs-9">
@@ -75,7 +71,3 @@
  </div>
 </div>
 </div>
-
-
-<!-- フッター -->
-<%= render 'books/listf', books: @books %>

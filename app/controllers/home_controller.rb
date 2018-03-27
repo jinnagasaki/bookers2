@@ -4,4 +4,7 @@ class HomeController < ApplicationController
   		redirect_to books_path
   	end
   end
+  def about
+  	
+  end
 end
